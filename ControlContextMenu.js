@@ -6,14 +6,25 @@ chrome.runtime.onInstalled.addListener(() => {
     'contexts':['video']
   })
 });
-chrome.contextMenus.onClicked.addListener((info, tab)=>{
-  const video_info = info.srcUrl;
-  console.log(video_info);
-  chrome.runtime.sendMessage({
+
+let video_info = null;
+
+chrome.contextMenus.onClicked.addListener((info)=>{
+  const video_src = info.srcUrl;
+  video_info = {
     msg: "video_source",
     data: {
-      src: video_info
+      src: video_src
     }
-  }, console.log("OK")
-  )
+  };
+  console.log(video_info);
+})
+
+chrome.extension.onConnect.addListener(function(port) {
+  console.log("Connected .....");
+  port.onMessage.addListener(function(msg) {
+    console.log(msg, video_info);
+    if(video_info !== null) port.postMessage(video_info);
+    video_info = null;
+  });
 })

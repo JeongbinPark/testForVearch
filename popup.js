@@ -1,3 +1,16 @@
+const port = chrome.extension.connect({
+  name: "Vearch"
+});
+port.postMessage("Connected!");
+
+port.onMessage.addListener((message) => {
+  console.log(message);
+  if (message.msg === "video_source"){
+    console.log(message.data.src);
+    videoSrc_button_onClick(videoSrc_button.value, message.data.src);
+  }
+})
+
 
 window.onload = () =>{
   const input = document.getElementById("videoInput");
@@ -6,15 +19,6 @@ window.onload = () =>{
     videoSrc_button_onClick(videoSrc_button.value, input.value);
    }, false);
   }
-
-chrome.runtime.onMessage.addListener(
-  function(message, sender, sendResponse){
-    if (message.msg === "video_source"){
-      console.log(message.data.src);
-      videoSrc_button_onClick(videoSrc_button.value, message.data.src);
-    }
-  }
-)
 
 
 const videoSrc_button_onClick = (state, text) => {
