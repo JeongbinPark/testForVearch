@@ -31,6 +31,7 @@ const videoSrc_button_onClick = (state, text) => {
     src_text.style.display = "inline";
 
     video.setAttribute('src', text);
+    video.setAttribute('controls','controls');
 
   }
   else{
@@ -40,6 +41,7 @@ const videoSrc_button_onClick = (state, text) => {
     src_text.style.display = "none";
     input.value = "";
     video.removeAttribute('src');
+    video.removeAttribute('controls');
     video.load();
   }
 }
