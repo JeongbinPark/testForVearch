@@ -22,11 +22,5 @@
     "tabs",
     "<all_urls>",
     "contextMenus"
-  ],
-
-  "background": {
-    "persistent": false,
-    "scripts": ["ControlContextMenu.js"]
-  }
-  
+  ]
 }

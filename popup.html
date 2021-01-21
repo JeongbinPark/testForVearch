@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <meta charset="utf-8">
     <link rel="stylesheet" href="./master.css" />
     <script src="./popup.js"></script>
   </head>
@@ -13,19 +14,18 @@
     <i class="line hor"></i>
     <div id="videoDiv">
       <div id="videoContainer">
-        <video id="video">
-        </video>
+        <iframe id="video"></iframe>
       </div>
       <div id="videoInputBar" class="inputBox">
         <input id="videoInput" type="text" placeholder="Video Source">
-        <h5 id="videoSrc"></h5>
+        <a id="videoSrc"><h4></h4></a>
         <button id="videoSrc_button" value="create">create</button>
       </div>
     </div>
     <i class="line hor"></i>
     <div id="searchBar" class="inputBox">
       <input type="text" placeholder="Search Keyword">
-      <button>Search</button>
+      <button id="search_button" >Search</button>
     </div>
     <i class="line ver" id="i_keyword"></i>
     <div id="contents">

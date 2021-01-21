@@ -11,96 +11,86 @@ ul {
   padding: 0;
 }
 
-
-.line{
-  display : inline-block;
+.line {
+  display: inline-block;
   position: absolute;
   z-index: 1;
   background-color: #e4e8eb;
 }
 .hor {
-  height : 1px;
+  height: 1px;
   width: 100%;
 }
 .ver {
-  width : 1px;
+  width: 1px;
   height: 100%;
 }
 
-#i_keyword{
+#i_keyword {
   left: 92px;
   margin: 25px 0px;
-  height : 400px;
+  height: 400px;
 }
 
 .title {
-  height : 40px;
+  height: 40px;
 }
 .title h1 {
-  display : inline-block;
-  margin : 0;
+  display: inline-block;
+  margin: 0;
 }
 #icon {
-  width : 40px;
-  height : 40px;
-  float :left;
+  width: 40px;
+  height: 40px;
+  float: left;
   background-image: url(./images/icon.png);
   background-size: 40px 40px;
 }
 #logo {
-  width : 120px;
-  height : 40px;
-  float :left;
+  width: 120px;
+  height: 40px;
+  float: left;
   background-image: url(./images/logo.png);
   background-size: 120px 40px;
 }
 #setting {
-  width : 40px;
-  height : 40px;
-  float :right;
+  width: 40px;
+  height: 40px;
+  float: right;
   background-image: url(./images/setting.png);
   background-size: 40px 40px;
 }
 
-
-
 #videoDiv {
-  height : 250px;
+  height: 250px;
   flex-direction: column;
 }
-#videoInputBar #videoSrc {
+#videoInputBar > #videoSrc {
   width: 80%;
-  text-overflow: ellipsis;
-  white-space: nowrap;   
-  word-wrap :break-word;
-  overflow : hidden;
   display: none;
-  margin: 0;
-  margin-top: 5px; 
 }
-
-
+#videoSrc > h4 {
+  margin: 5px;
+}
 
 .inputBox {
   display: flex;
   justify-content: center;
-  height : 40px;
+  height: 40px;
   padding: 8px;
 }
 .inputBox input {
   display: inline-block;
-  margin-right:-1px;
+  margin-right: -1px;
   width: 80%;
 }
 .inputBox button {
   width: 20%;
 }
 
-
-
 #videoContainer {
-  margin : 10px;
-  height : 200px;
+  margin: 10px;
+  height: 200px;
   background-color: #aaaaaa;
 }
 #video {
@@ -109,13 +99,13 @@ ul {
 }
 
 #contents {
-  height : 400px;
+  height: 400px;
   padding: 0 15px;
 }
 
-#keywordLists li>div{
+#keywordLists li > div {
   display: inline-block;
-} 
+}
 #keywordLists .timestamp {
   width: 20%;
   margin-right: 5%;
