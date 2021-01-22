@@ -29,7 +29,7 @@ ul {
 #i_keyword {
   left: 92px;
   margin: 25px 0px;
-  height: 400px;
+  height: 355px;
 }
 
 .title {
@@ -99,17 +99,21 @@ ul {
 }
 
 #contents {
-  height: 400px;
-  padding: 0 15px;
+  padding-left: 15px;
 }
 
-#keywordLists li > div {
+.keywordListsComponent div {
   display: inline-block;
 }
-#keywordLists .timestamp {
+#keywordLists {
+  height: 350px;
+  overflow-y: auto;
+}
+.timestamp {
   width: 20%;
   margin-right: 5%;
+  vertical-align: top;
 }
-#keywordLists .keyword {
+.keyword {
   width: 70%;
 }
