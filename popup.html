@@ -17,16 +17,20 @@
       <div id="videoContainer">
         <iframe id="video"></iframe>
       </div>
-      <div id="videoInputBar" class="inputBox">
-        <input id="videoInput" type="text" placeholder="Video Source">
-        <a id="videoSrc"><h4></h4></a>
-        <button id="videoSrc_button" value="create">create</button>
+      <div>
+        <form action="http://192.168.0.6:3002/link" method="post" id="videoInputBar" class="inputBox">
+          <input id="videoInput" name="link" type="text" placeholder="Video Source">
+          <a id="videoSrc"><h4></h4></a>
+          <button id="videoSrc_button" value="create">create</button>
+        </form>
       </div>
     </div>
     <i class="line hor"></i>
-    <div id="searchBar" class="inputBox">
-      <input type="text" placeholder="Search Keyword">
-      <button id="search_button" >Search</button>
+    <div>
+      <form action="/search" method="post"  id="searchBar" class="inputBox">
+        <input id="search_input" type="text" placeholder="Search Keyword">
+        <button id="search_button" >Search</button>
+      </form>
     </div>
     <i class="line ver" id="i_keyword"></i>
     <div id="contents">

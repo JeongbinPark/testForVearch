@@ -2,12 +2,13 @@ window.onload = () =>{
   const input = document.getElementById("videoInput");
   const videoSrc_button = document.getElementById("videoSrc_button");
   const search_button = document.getElementById("search_button");
+  const search_input = document.getElementById("search_input");
   
   videoSrc_button.addEventListener('click', ()=>{
     videoSrc_button_onClick(videoSrc_button.value, input.value);
    }, false);
    search_button.addEventListener('click', ()=>{
-     search_button_onClick(search_button.value);
+     search_button_onClick(search_input.value);
     }, false);
   }
 
@@ -28,6 +29,8 @@ const videoSrc_button_onClick = (state, videoSource) => {
     videoSrcText.innerText = src;
 
     //request and get scripts to server by passing video source or id
+    
+    /*    
     //for test(temporary)
     pass_VideoSource(videoSource)
       .then(()=> get_VideoScript())
@@ -37,17 +40,15 @@ const videoSrc_button_onClick = (state, videoSource) => {
         makeScriptList(textScripts);  
       })
       .catch(alert);
+    */
 
     //original 
-    /*    
     getScriptData(videoSource)
-      .then((textScripts) => {
-        console.log(textScripts);
+      .then(scriptsJson => {
         //make script list tags
-        makeScriptList(textScripts);  
+        makeScriptList(scriptsJson.scripts);  
       })
       .catch(alert); 
-    */
       
     input.style.display = "none";
     videoSrc_button.value = "delete";
@@ -73,6 +74,7 @@ const videoSrc_button_onClick = (state, videoSource) => {
 }
 
 
+/* 
 //for test(temporary)
 const pass_VideoSource = (videoSource) =>{
   return new Promise((resolve, reject)=>{
@@ -94,11 +96,12 @@ const get_VideoScript = () => {
     }, 1000); 
   })
 }
+*/ 
 
 //original 
-/* 
 //depending on the server, parameter can be video source or video id
 const getScriptData = async(videoSource) => {
+  /*
   let response = await fetch(`/scripts/${videoSource}`);  //request 
   if (response.status === 200){
     let scriptJSON = await response.json();
@@ -108,8 +111,18 @@ const getScriptData = async(videoSource) => {
     return new Error("Couldn't get video script!");
   } 
 }
-*/ 
-
+*/
+  const response = await fetch('http://192.168.0.6:3002/link', {
+    method: "post",
+    headers: {
+      'Accept': 'application/json',
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({link: videoSource})
+  });
+  const content = await response.json();
+  return content;
+}
 
 const makeScriptList = (data) => {
   if(data === null) return new Error("There is no script!");
@@ -137,7 +150,8 @@ const search_button_onClick = (keyword) => {
   if(keyword === null){
     //total script 
   }
-  else {
+  else { 
     //keyword script
+    console.log(keyword);
   }
 }
