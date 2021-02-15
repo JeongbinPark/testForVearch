@@ -2,6 +2,7 @@ window.onload = () =>{
   const search_button = document.getElementById("search_button");
   const search_input = document.getElementById("search_input");
   const videoSrcForm = document.getElementById("videoInputBar");
+  const keywordSearchForm = document.getElementById("searchBar");
 
   videoSrcForm.addEventListener('submit', function(e){
     e.preventDefault();
@@ -17,14 +18,48 @@ window.onload = () =>{
     (async() => {
       const scriptsJson = await getScriptData(videoID);
 
+      //should save scriptJson into session storage
+      //for searching keyword
+
       //make script list tags
       makeScriptList(scriptsJson.scripts);
     })();
   });
 
-  search_button.addEventListener('click', ()=>{
+  
+  //check keyword value
+  //and make a new array to pass for makeScriptList function's parameter
+
+  //choose 'submit' or 'onChange'
+  //do not need to submit because there's the script in storage
+  keywordSearchForm.addEventListener('submit', function(e){
+    e.preventDefault();
+    const keyword = this.keyword.value;
+
+    //call the data from session storage
+/* 
+    let newScriptArray = [];
+    //searching string(keyword) with indexOf function
+    forEach (el => {
+      const time = el.time;
+      const script = el.script;
+      if(script.indexOf(keyword) != -1){
+        newScriptArray.push(
+          {
+            time: time,
+            script : script
+          }, 
+        )
+      }
+    })
+
+    makeScriptList(newScriptArray);
+     */
+  });
+
+/*   search_button.addEventListener('click', ()=>{
     search_button_onClick(search_input.value);
-  }, false);
+  }, false); */
 }
 
 const changeTags = (state, videoID) => {
@@ -93,17 +128,4 @@ const makeScriptList = (data) => {
     li.appendChild(keyword);
     ul.appendChild(li);
   });
-}
-
-const search_button_onClick = (keyword) => {
-  //check video
-  //if there's no video, float the message for empty source
-  //if not,
-  if(keyword === null){
-    //total script 
-  }
-  else { 
-    //keyword script
-    console.log(keyword);
-  }
 }
