@@ -33,37 +33,25 @@ ul {
 }
 
 .title {
-  height: 40px;
+  height: 50px;
 }
 .title h1 {
   display: inline-block;
   margin: 0;
 }
-#icon {
-  width: 40px;
-  height: 40px;
-  float: left;
-  background-image: url(./images/icon.png);
-  background-size: 40px 40px;
-}
 #logo {
-  width: 120px;
-  height: 40px;
+  width: 200px;
+  height: 50px;
   float: left;
   background-image: url(./images/logo.png);
-  background-size: 120px 40px;
-}
-#setting {
-  width: 40px;
-  height: 40px;
-  float: right;
-  background-image: url(./images/setting.png);
-  background-size: 40px 40px;
+  background-size: 200px 50px;
+  cursor: pointer;
 }
 
 #videoDiv {
-  height: 250px;
+  height: 220px;
   flex-direction: column;
+  line-height: 1;
 }
 #videoInputBar > #videoSrc {
   width: 80%;
@@ -88,14 +76,40 @@ ul {
   width: 20%;
 }
 
+#output {
+  border: 0px;
+  padding: 0;
+  height: 0px;
+}
+
 #videoContainer {
-  margin: 10px;
   height: 200px;
+  margin: 0px 10px;
   background-color: #aaaaaa;
 }
+#blankVideo {
+  cursor: pointer;
+}
+#icon {
+  width: 140px;
+  height: 160px;
+  margin: auto;
+  background: url(./images/icon.png) center no-repeat;
+  background-size: 140px 140px;
+}
+#clickText {
+  text-align: center;
+  font-size: 16px;
+  font-family: arial;
+  font-weight: bold;
+  color: #eeeeee;
+  margin-top: 5px;
+}
+
 #video {
   width: 330px;
   height: 200px;
+  display: none;
 }
 
 #contents {
