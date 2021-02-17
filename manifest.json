@@ -22,6 +22,7 @@
     "tabs",
     "http://localhost/*",
     "<all_urls>",
-    "contextMenus"
+    "contextMenus",
+    "storage"
   ]
 }
