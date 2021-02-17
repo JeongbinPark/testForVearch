@@ -26,6 +26,13 @@ ul {
   height: 100%;
 }
 
+#i_search {
+  height: 25px;
+  margin: 3px;
+  width: 2px;
+  background-color: black;
+}
+
 #i_keyword {
   left: 92px;
   margin: 25px 0px;
@@ -64,13 +71,23 @@ ul {
 .inputBox {
   display: flex;
   justify-content: center;
-  height: 40px;
-  padding: 8px;
+  height: 35px;
+  margin: 5px 0 10px 0;
+}
+.inputBox > div {
+  border: 2px solid black;
+  border-radius: 35px;
+  padding-left: 15px;
+  width: 95%;
 }
 .inputBox input {
   display: inline-block;
-  margin-right: -1px;
-  width: 80%;
+  border: none;
+  width: 85%;
+  height: 30px;
+}
+.inputBox input:focus {
+  outline: none;
 }
 .inputBox button {
   width: 20%;
@@ -116,6 +133,17 @@ ul {
   padding-left: 15px;
 }
 
+#search_icon {
+  width: 30px;
+  height: 30px;
+  background: url(./images/search_icon.png) center no-repeat;
+  background-size: 20px 20px;
+  display: inline-block;
+  vertical-align: middle;
+  margin-left: 10px;
+  cursor: pointer;
+}
+
 .keywordListsComponent div {
   display: inline-block;
 }
@@ -127,6 +155,7 @@ ul {
   width: 20%;
   margin-right: 5%;
   vertical-align: top;
+  cursor: pointer;
 }
 .keyword {
   width: 70%;

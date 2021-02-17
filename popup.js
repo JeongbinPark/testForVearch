@@ -4,6 +4,8 @@ window.onload = () =>{
   const keywordSearchForm = document.getElementById("searchBar");
   const blankVideo =  document.getElementById("blankVideo");
   const logo =  document.getElementById("logo");
+  const search_icon =  document.getElementById("search_icon");
+  const search_input =  document.getElementById("search_input");
 
   //create video and script
   blankVideo.addEventListener('click', function(){
@@ -47,9 +49,9 @@ window.onload = () =>{
 
   //choose 'submit' or 'onChange'
   //do not need to submit because there's the script in storage
-  keywordSearchForm.addEventListener('submit', function(e){
+  search_icon.addEventListener('click', function(e){
     e.preventDefault();
-    const keyword = this.keyword.value;
+    const keyword = search_input.value;
 
     console.log("what you typed : ", keyword);
 
